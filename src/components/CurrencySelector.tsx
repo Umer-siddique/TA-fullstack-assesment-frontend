@@ -12,11 +12,11 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
   onCurrencyChange,
 }) => (
   <select
-    className="form-select shadow-sm"
+    className="form-select shadow-sm shadow-sm-custom select-custom"
     value={selectedCurrency}
     onChange={(e) => onCurrencyChange(e.target.value)}
-    style={{ fontSize: "1rem", padding: "0.75rem" }}
   >
+    {/* Map over currencies to display options */}
     {currencies.map((currency) => (
       <option key={currency} value={currency}>
         {currency}

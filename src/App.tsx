@@ -10,22 +10,22 @@ import {
 } from "./components";
 
 const App: React.FC = () => {
-  const { rates, loading, error } = useRates();
-  const [fromCurrency, setFromCurrency] = useState<string>("USD");
-  const [toCurrency, setToCurrency] = useState<string>("EUR");
-  const [amount, setAmount] = useState<number>(0);
-  const [result, setResult] = useState<number | null>(null);
+  const { rates, loading, error } = useRates(); // Fetch rates, loading state, and error
+  const [fromCurrency, setFromCurrency] = useState<string>("USD"); // From currency state
+  const [toCurrency, setToCurrency] = useState<string>("EUR"); // To currency state
+  const [amount, setAmount] = useState<number>(0); // Amount to convert
+  const [result, setResult] = useState<number | null>(null); // Conversion result state
   const [records, setRecords] = useState<ConversionRecord[]>(() => {
     const savedRecords = localStorage.getItem("conversionRecords");
-    return savedRecords ? JSON.parse(savedRecords) : [];
+    return savedRecords ? JSON.parse(savedRecords) : []; // Retrieve saved records from localStorage
   });
 
   const handleConvert = () => {
     if (!rates) return;
 
-    const conversionRate = rates[toCurrency] / rates[fromCurrency];
-    const convertedAmount = amount * conversionRate;
-    setResult(convertedAmount);
+    const conversionRate = rates[toCurrency] / rates[fromCurrency]; // Calculate conversion rate
+    const convertedAmount = amount * conversionRate; // Perform conversion
+    setResult(convertedAmount); // Set the conversion result
 
     const newRecord: ConversionRecord = {
       from: fromCurrency,
@@ -35,9 +35,9 @@ const App: React.FC = () => {
       date: new Date().toLocaleString(),
     };
 
-    const updatedRecords = [newRecord, ...records];
+    const updatedRecords = [newRecord, ...records]; // Add new record
     setRecords(updatedRecords);
-    localStorage.setItem("conversionRecords", JSON.stringify(updatedRecords));
+    localStorage.setItem("conversionRecords", JSON.stringify(updatedRecords)); // Save to localStorage
   };
 
   return (
@@ -47,9 +47,9 @@ const App: React.FC = () => {
     >
       <Header />
       {loading ? (
-        <LoadingSpinner />
+        <LoadingSpinner /> // Show loading spinner while fetching data
       ) : error ? (
-        <div className="alert alert-danger text-center">{error}</div>
+        <div className="alert alert-danger text-center">{error}</div> // Display error if any
       ) : (
         rates && (
           <>

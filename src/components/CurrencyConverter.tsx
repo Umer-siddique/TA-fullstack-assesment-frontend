@@ -14,6 +14,7 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
 }) => (
   <>
     <div className="row mb-3">
+      {/* Currency selection for 'from' and 'to' */}
       <div className="col">
         <CurrencySelector
           currencies={Object.keys(rates)}
@@ -29,24 +30,22 @@ const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
         />
       </div>
     </div>
+
+    {/* Input for amount to convert */}
     <div className="mb-3">
       <input
         type="number"
-        className="form-control shadow-sm"
+        className="form-control shadow-sm shadow-sm-custom input-custom"
         value={amount}
         onChange={(e) => setAmount(parseFloat(e.target.value))}
-        style={{ fontSize: "1rem", padding: "0.75rem" }}
         placeholder="Enter amount"
       />
     </div>
+
+    {/* Button to trigger conversion */}
     <button
-      className="btn btn-primary w-100 mb-3 d-flex align-items-center justify-content-center shadow-sm"
+      className="btn btn-primary w-100-custom mb-3 d-flex align-items-center justify-content-center shadow-sm-custom py-2"
       onClick={onConvert}
-      style={{
-        fontSize: "1rem",
-        padding: "0.75rem",
-        fontWeight: 600,
-      }}
     >
       <i className="bi bi-arrow-left-right me-2"></i>
       Convert

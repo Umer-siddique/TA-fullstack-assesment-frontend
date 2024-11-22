@@ -1,9 +1,123 @@
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base font styles */
 body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* General Utility Styles */
+.text-primary {
+  color: #007bff;
+}
+
+.bg-light-gray {
+  background-color: #e9ecef;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: 800;
+}
+
+.shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.table-heading {
+  white-space: nowrap;
+}
+
+/* Spacing Utilities */
+.p-1-custom {
+  padding: 1rem;
+}
+
+/* Heading Styles */
+.conversion-heading {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Icon Styles */
+.icon-primary {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: #007bff;
+}
+
+/* Alert Styles */
+.alert-success-custom {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Form Styles */
+.input-custom,
+.select-custom {
+  font-size: 1rem;
+  padding: 0.75rem;
+}
+
+/* Full Width Utility */
+.w-100-custom {
+  width: 100%;
+}
+
+/* Header Styles */
+.header-custom {
+  background-color: #f8f9fa;
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  color: #007bff;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.header-subtitle {
+  color: #6c757d;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.icon-custom {
+  color: #28a745;
+  font-size: 2.2rem;
+}
+
+/* Margin Utilities */
+.mb-0-custom {
+  margin-bottom: 0;
+}
+
+/* Spinner Styles */
+.spinner-container {
+  height: 200px;
+}
+
+.spinner-border-custom {
+  font-size: 3rem;
+}
+
+/* Reusable Shadow */
+.shadow-sm-custom {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
